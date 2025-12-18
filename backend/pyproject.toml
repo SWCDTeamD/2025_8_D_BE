@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swcd-panel-search"
+version = "0.1.0"
+description = "Natural language panel search system"
+requires-python = ">=3.9"
+
+[tool.pyright]
+include = ["backend"]
+exclude = ["**/__pycache__", "**/node_modules", ".venv", "frontend"]
+reportMissingImports = "warning"
+reportMissingTypeStubs = false
+typeCheckingMode = "basic"
+pythonVersion = "3.9"
+extraPaths = ["."]
+

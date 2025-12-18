@@ -1,0 +1,14 @@
+---
+alwaysApply: false
+---
+panels ( panel_id VARCHAR(100) PRIMARY KEY, gender VARCHAR(20), age INTEGER, region_city VARCHAR(100), -- 지역(시) region_gu VARCHAR(100), -- 지역(구) marital_status VARCHAR(50), -- 결혼 여부 children_count INTEGER, -- 자녀수 family_size INTEGER, -- 가족수 education_level VARCHAR(100), -- 최종학력 occupation VARCHAR(100), -- 직업 job_function VARCHAR(100), -- 직무 monthly_personal_income INTEGER, -- 월평균 개인소득 monthly_household_income INTEGER, -- 월평균 가구소득 phone_brand VARCHAR(100), -- 보유 휴대폰 브랜드 phone_model VARCHAR(100), -- 보유 휴대폰 모델명 car_ownership BOOLEAN, -- 차량 보유 여부 car_manufacturer VARCHAR(100), -- 보유 차량 제조사 car_model VARCHAR(100), -- 보유 차량 모델 -- 이미지의 복수선택 항목들을 배열(ARRAY) 타입으로 직접 포함 (더 단순하고 효과적) owned_electronics VARCHAR(255)[], -- 보유 전자 제품 (복수선택) smoking_experience VARCHAR(255)[], -- 흡연경험 (복수선택) smoking_brand VARCHAR(255)[], -- 흡연경험브랜드 (복수선택) e_cigarette_experience VARCHAR(255)[], -- 전자담배흡연경험 (복수선택) e_cig_heated_brand VARCHAR(255)[], -- 궐련 / 가열형 전자담배 흡연 경험 브랜드 (복수선택) e_cig_liquid_brand VARCHAR(255)[], -- 액상형 전자담배 흡연경험 브랜드 (복수선택) drinking_experience VARCHAR(255)[], -- 음주 경험 (복수선택) panel_summary_text TEXT NOT NULL, -- **(LLM 생성)** 패널 전체를 아우르는 종합 요약 텍스트 (패널 상세보기용) panel_summary_embedding VECTOR(1536), -- **(LLM 생성)** `panel_summary_text`의 임베딩 벡터 search_labels VARCHAR(100)[] DEFAULT '{}', -- **(LLM 또는 규칙 기반 생성)** 검색 성능 향상을 위한 핵심 라벨 목록 (배열, GIN 인덱스) created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL, updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL )
+
+- PostgreSQL의 배열(ARRAY) 타입을 사용하여 owned_electronics VARCHAR(255)[]와 같이 직접 panels 테이블 내에 저장하는 것이 훨씬 단순하고, GIN 인덱스를 통해 포함 여부 검색 ('TV' = ANY(owned_electronics))도 효율적으로 할 수 있습니다. LOOKUP TABLE은 앱 레이어에서 Enum이나 설정 파일로 관리할 수 있습니다.
+
+panel_summary_segments ( segment_id VARCHAR(150) PRIMARY KEY, -- 각 요약 텍스트 세그먼트를 고유하게 식별 (예: 'panel_123-G1_HEALTH') panel_id VARCHAR(100) NOT NULL, -- 이 세그먼트가 속한 패널의 ID (panels.panel_id 참조) segment_name VARCHAR(50) NOT NULL, -- 요약 텍스트의 유형 (예: 'G1_HEALTH', 'G2_TECH') summary_text TEXT NOT NULL, -- G1~G7 각 문항 답변의 요약 텍스트 segment_embedding VECTOR(1536) NOT NULL, -- summary_text의 임베딩 벡터 ts_vector_korean TSVECTOR, -- 한국어 Full-Text Search를 위한 텍스트 벡터 created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL, FOREIGN KEY (panel_id) REFERENCES panels (panel_id) ON DELETE CASCADE )
+
+* G1~G7 각 문항의 답변 요약 텍스트와 해당 텍스트의 임베딩 벡터, 그리고 Full-Text Search를 위한 TSVECTOR를 저장합니
+
+panel_attribute_lookup ( attribute_name VARCHAR(100) NOT NULL, -- 속성명 (예: 'owned_electronics', 'smoking_experience') code VARCHAR(50) NOT NULL, -- 코드 (예: '01', 'TV') value VARCHAR(255) NOT NULL, -- 실제 값 (예: '텔레비전', '흡연 경험 없음') PRIMARY KEY (attribute_name, code) )
+
+* 복수 선택 정형 데이터의 코드와 실제 값 매핑을 저장합니다. 

@@ -1,0 +1,34 @@
+---
+alwaysApply: true
+---
+
+# [프로젝트 디렉토리 구조 및 각 계층 역할 (3계층 아키텍처)]
+우리의 프로젝트는 최대한 간결한 다음의 3계층 아키텍처를 따릅니다.
+
+-   **`my_fastapi_project/`**
+    -   `main.py`: FastAPI 애플리케이션 진입점. `app/routers/`의 API 라우터들을 등록하고 `uvicorn`으로 실행됨.
+    -   `app/`
+        -   `routers/`:
+            -   **역할:** 클라이언트의 HTTP 요청을 받아들이고, `services` 계층의 함수를 호출하여 비즈니스 로직을 실행시킨 후, 결과를 HTTP 응답으로 반환하는 **API 엔드포인트 정의**.
+            -   **포함될 파일:** `panel_router.py`, `search_router.py`, `admin_router.py` 등.
+            -   **주요 책임:** API 명세, HTTP 상태 코드 관리, `services` 계층 호출.
+        -   `services/`:
+            -   **역할:** **모든 핵심 비즈니스 로직 구현** 및 **API 입/출력용 Pydantic 스키마 정의**.
+            -   **포함될 파일:** `panel_service.py`, `search_service.py`, `etl_service.py` 등.
+            -   **주요 책임:**
+                -   `repositories` 계층의 메서드를 호출하여 데이터 CRUD.
+                -   LLM 기반 자연어 처리 (쿼리 분석, 검색어 증강, 인사이트 도출, 요약, 임베딩).
+                -   하이브리드 검색 로직 (정형/비정형 쿼리 분리, RRF 알고리즘 통합).
+                -   데이터 전처리 (LLM 청킹, 임베딩 생성 등 ETL 파이프라인).
+                -   API 요청/응답을 위한 **Pydantic `BaseModel` 스키마 정의**.
+                -   LangChain `ChatOpenAI`, `OpenAIEmbeddings`, `ChatPromptTemplate` 등 LLM 관련 설정 및 체인 정의.
+        -   `repositories/`:
+            -   **역할:** 데이터베이스(PostgreSQL)와 직접 연결되어 데이터를 조작하는 계층. **DB 연결 설정, SQLAlchemy ORM 모델 정의, DB CRUD(생성, 조회, 업데이트, 삭제) 로직 구현**.
+            -   **포함될 파일:** `panel_repository.py`, `document_repository.py` 등.
+            -   **주요 책임:**
+                -   데이터베이스 연결 엔진 및 세션 관리 (`SessionLocal`, `get_db()`).
+                -   SQLAlchemy `declarative_base()`를 상속받는 **ORM 모델 정의** (예: `Panel`, `PanelProfileDocument`).
+                -   패널 정형 데이터에 대한 SQL 필터링 쿼리 (`WHERE` 절 동적 생성 및 실행).
+                -   문서 청크 데이터에 대한 **벡터 유사도 검색 (`pgvector` 연동)**.
+                -   문서 청크 데이터에 대한 **키워드 검색 (PostgreSQL Full-Text Search 또는 BM25s 유사 구현)**.
+                -   DB 트랜잭션 관리 (implicit via `get_db()` context or explicit if needed in complex procedures).

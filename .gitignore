@@ -1,0 +1,97 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.backup
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Frontend
+# Frontend
+frontend/
+# frontend/dist/
+# frontend/build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.pid
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+local_dump.dump
+
+# Large data files (GitHub size limits)
+backend/data/panel_data.json
+backend/data/panel_data.json.backup
+db_dumps/
+*.sql.gz
+
+# Cursor AI
+.cursor/
+# .cursor/rules/ 는 필요시 예외 처리 가능
+
+# Docker
+docker-compose.override.yml
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sensitive Data & Docs
+backend/docs/
+backend/data/*
+!backend/data/.gitkeep
+
+# Test Scripts
+backend/scripts/test_*.py
+backend/scripts/check_*.py
+backend/scripts/monitor_*.py
+backend/scripts/show_*.py

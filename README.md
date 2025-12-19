@@ -158,15 +158,8 @@ backend/
 │   ├── document_repository.py      # 비정형 데이터 쿼리 (Vector Similarity, FTS)
 │   ├── value_normalizer.py         # 검색어/필터 값 정규화 처리
 │   └── database.py                 # DB 세션 및 연결 관리
-├── db/                             # 데이터베이스 관리
-│   └── init/                       # 초기화 및 마이그레이션 SQL
-│       ├── 02_schema.sql           # 메인 테이블 스키마 정의
-│       ├── 08_optimize_indexes.sql # 검색 성능 최적화 인덱스
-│       └── 09_optimize_unstructured_search.sql # 텍스트 검색 최적화 설정
-├── data/                           # 정적 데이터 파일
-│   ├── label.json                  # 자연어 카테고리 매핑 정의 파일
-│   ├── category_groups.json        # 카테고리 그룹핑 메타데이터
-│   └── panel_data.json             # 원본 패널 데이터 샘플
+├── db/                             # 데이터베이스 관리 (데이터 유출 방지를 위해 비공개)
+├── data/                           # 정적 데이터 파일 (데이터 유출 방지를 위해 비공개)
 ├── scripts/                        # 유틸리티 및 ETL 스크립트
 │   └── etl_pipeline.py             # 전체 데이터 ETL 파이프라인 (전처리, 임베딩 재생성 및 적재)
 ├── logs/                           # 런타임 로그 저장소

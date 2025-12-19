@@ -188,7 +188,11 @@ frontend/
 ├── public/                         # 정적 리소스 (아이콘, 매니페스트)
 ├── index.html                      # HTML 템플릿
 ├── vite.config.ts                  # Vite 빌드 설정
-└── package.json                    # 의존성 및 스크립트 설정
+├── tsconfig.json                   # TypeScript 메인 설정
+├── tsconfig.node.json              # TypeScript Node 관련 설정
+├── package.json                    # 의존성 및 스크립트 설정
+├── package-lock.json               # 의존성 버전 잠금 파일
+└── .env.example                    # 환경변수 예시 파일
 ```
 
 # API Endpoints

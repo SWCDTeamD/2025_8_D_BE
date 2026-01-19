@@ -69,10 +69,10 @@
        <td align="center"><a href="https://github.com/Jihwan17"><img src="https://avatars.githubusercontent.com/u/232972776?v=4" width="150px;" alt=""/><br /><sub><b> 최지환 </b></sub></a><br /></td>
     </tr>
     <tr>
-      <td align="center">Front / AI</td>
+      <td align="center">FE / AI</td>
       <td align="center"> Data </td>
-      <td align="center">Front / AI</td>
-      <td align="center">Lead / Back</td>
+      <td align="center">FE / AI</td>
+      <td align="center">Lead / BE</td>
       <td align="center"> Data </td>
     </tr>
   </tbody>

@@ -27,42 +27,42 @@
 
 # Preview
 
- <table>
-<tbody>
-<tr>
-<td align="center" colspan="2">
-<b>초기 검색 페이지<br>
-<img src="https://github.com/user-attachments/assets/2692cb6f-6519-4a03-86c7-748380a051cc" width="100%">
-</td>
-</tr>
-<tr>
-<td align="center" width="50%">
-<b>패널 출력 페이지<br>
-<img src="https://github.com/user-attachments/assets/80d60641-9fc4-4f33-8edf-68af63c5e483" width="100%">
-</td>
-<td align="center" width="50%">
-<b>패널 상세 페이지<br>
-<img src="https://github.com/user-attachments/assets/3662971e-a7fd-4f66-a2fb-8444b29b3fe4" width="100%">
-</td>
-</tr>
-<tr>
-<td align="center" width="50%">
-<b>통계 시각화<br>
-<img src="https://github.com/user-attachments/assets/ac4a5312-5533-4b5f-afed-9058ee3f6329" width="100%">
-</td>
-<td align="center" width="50%">
-<b>분석 코멘트<br>
-<img src="https://github.com/user-attachments/assets/7323cf89-fb29-4f1c-af4e-530b3af13b3b" width="100%">
-</td>
-</tr>
-</tbody>
-</table>
+  
 
 # Members
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/Codinggnewbe"><img src="https://avatars.githubusercontent.com/u/166682803?v=4" width="150px;" alt=""/><br /><sub><b> 김민수 </b></sub></a><br /></td>
+      <td align="center"><a hre<table>
+<tbody>
+<tr>
+<td align="center" colspan="2">
+<b>초기 검색 페이지<br>
+<img src="https://github.com/user-attachments/assets/d17c2b16-5b2b-4504-9343-1bca5721c52b" width="100%">
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+<b>패널 출력 페이지<br>
+<img src="https://github.com/user-attachments/assets/d49e5c79-a5c1-4846-a97d-4615cfdedb55" width="100%">
+</td>
+<td align="center" width="50%">
+<b>패널 상세 페이지<br>
+<img src="https://github.com/user-attachments/assets/403e2814-7aa4-4264-8815-ba76e80b24fe" width="100%">
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+<b>통계 시각화<br>
+<img src="https://github.com/user-attachments/assets/4de7cb9b-f367-487f-ac9b-160a8f80eebd" width="100%">
+</td>
+<td align="center" width="50%">
+<b>분석 코멘트<br>
+<img src="https://github.com/user-attachments/assets/7572db02-e49b-4eb8-bbd6-d6085ed5817b" width="100%">
+</td>
+</tr>
+</tbody>
+</table>f="https://github.com/Codinggnewbe"><img src="https://avatars.githubusercontent.com/u/166682803?v=4" width="150px;" alt=""/><br /><sub><b> 김민수 </b></sub></a><br /></td>
        <td align="center"><a href="https://github.com/KimMinHyuk02"><img src="https://avatars.githubusercontent.com/u/185067106?v=4" width="150px;" alt=""/><br /><sub><b> 김민혁 </b></sub></a><br /></td>
        <td align="center"><a href="https://github.com/DoKyems"><img src="https://avatars.githubusercontent.com/u/85345952?v=4" width="150px;" alt=""/><br /><sub><b> 김도겸 </b></sub></a><br /></td>
        <td align="center"><a href="https://github.com/leesk0007"><img src="https://avatars.githubusercontent.com/u/174444051?v=4" width="150px;" alt=""/><br /><sub><b> 이성규 </b></sub></a><br /></td>

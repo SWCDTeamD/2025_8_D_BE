@@ -27,13 +27,7 @@
 
 # Preview
 
-  
-
-# Members
 <table>
-  <tbody>
-    <tr>
-      <td align="center"><a hre<table>
 <tbody>
 <tr>
 <td align="center" colspan="2">
@@ -62,7 +56,13 @@
 </td>
 </tr>
 </tbody>
-</table>f="https://github.com/Codinggnewbe"><img src="https://avatars.githubusercontent.com/u/166682803?v=4" width="150px;" alt=""/><br /><sub><b> 김민수 </b></sub></a><br /></td>
+</table>
+
+# Members
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/Codinggnewbe"><img src="https://avatars.githubusercontent.com/u/166682803?v=4" width="150px;" alt=""/><br /><sub><b> 김민수 </b></sub></a><br /></td>
        <td align="center"><a href="https://github.com/KimMinHyuk02"><img src="https://avatars.githubusercontent.com/u/185067106?v=4" width="150px;" alt=""/><br /><sub><b> 김민혁 </b></sub></a><br /></td>
        <td align="center"><a href="https://github.com/DoKyems"><img src="https://avatars.githubusercontent.com/u/85345952?v=4" width="150px;" alt=""/><br /><sub><b> 김도겸 </b></sub></a><br /></td>
        <td align="center"><a href="https://github.com/leesk0007"><img src="https://avatars.githubusercontent.com/u/174444051?v=4" width="150px;" alt=""/><br /><sub><b> 이성규 </b></sub></a><br /></td>
